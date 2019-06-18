@@ -21,7 +21,7 @@ npm i telefone
 ```js
 const parse = require('telefone/parse');
 // or
-const { parse } = require('telefone/parse');
+const { parse } = require('telefone');
 // or
 const parse = require('telefone').parse;
 ```
