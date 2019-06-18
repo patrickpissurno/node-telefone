@@ -1,0 +1,32 @@
+{
+  "name": "telefone",
+  "version": "1.0.0",
+  "description": "Biblioteca para validar facilmente telefones brasileiros",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap --100"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patrickpissurno/node-telefone.git"
+  },
+  "keywords": [
+    "telefone",
+    "phone",
+    "brazil",
+    "br",
+    "validate",
+    "validar",
+    "easy",
+    "lightweight"
+  ],
+  "author": "Patrick Pissurno",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/patrickpissurno/node-telefone/issues"
+  },
+  "homepage": "https://github.com/patrickpissurno/node-telefone#readme",
+  "devDependencies": {
+    "tap": "^14.2.2"
+  }
+}
