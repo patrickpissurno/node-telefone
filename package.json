@@ -27,6 +27,6 @@
   },
   "homepage": "https://github.com/patrickpissurno/node-telefone#readme",
   "devDependencies": {
-    "tap": "^14.2.2"
+    "tap": "^14.10.6"
   }
 }
