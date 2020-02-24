@@ -6,7 +6,7 @@ tap.equal(parse('123'), null, 'telefone inválido deve retornar null');
 tap.equal(parse('00000000000'), null, 'telefone inválido deve retornar null');
 tap.equal(parse('00900000000'), null, 'telefone inválido deve retornar null');
 tap.equal(parse('9999999999'), null, 'telefone inválido deve retornar null');
-tap.equal(parse('99999999999'), null, 'telefone inválido deve retornar null');
+tap.equal(parse('99999999999'), '99999999999', 'telefone válido, pois dígitos repetidos pode ser um número válido');
 tap.equal(parse('1190000000'), null, 'telefone inválido deve retornar null');
 tap.equal(parse('1178000000'), null, 'celulares da nextel desde 2018 também começam com 9');
 tap.equal(parse('9921990000000'), null, 'telefone começando com DDI não brasileiro deve retornar null');
