@@ -43,8 +43,8 @@ module.exports = function (value, options = { apenasFixo: false, apenasCelular: 
     if (telefone.length === 11){
         if(telefone.substring(2, 3) !== '9')
             return null; //todos os telefones celulares começam com 9
-        if(telefone.substring(3, 4) === '0' || telefone.substring(3, 4) == '5')
-            return null; //não existe 90 ou 95 
+        if(telefone.substring(3, 4) === '0')
+            return null; //não existe 90
     }
     else if(telefone.length === 10 && iniciaisFixo.indexOf(telefone.substring(2, 3)) === -1)
         return null; //inicial do celular fixo
