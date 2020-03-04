@@ -15,10 +15,18 @@ const codigosDDD = [
 
 const iniciaisFixo = [ '2', '3', '4', '5' ];
 
+const default_options = {
+    apenasFixo: false,
+    apenasCelular: false,
+
+    /** @type { string[] } */
+    apenasDDD: null
+}
+
 /**
  * @param {string} value número de telefone
  */
-module.exports = function (value, options = { apenasFixo: false, apenasCelular: false }){
+module.exports = function (value, options = default_options){   
     if(value == null || typeof(value) !== 'string')
         return null;
 
@@ -49,7 +57,11 @@ module.exports = function (value, options = { apenasFixo: false, apenasCelular: 
     else if(telefone.length === 10 && iniciaisFixo.indexOf(telefone.substring(2, 3)) === -1)
         return null; //inicial do celular fixo
 
-    if (codigosDDD.indexOf(parseInt(telefone.substring(0, 2))) === -1)
+    const ddd = telefone.substring(0, 2);
+    if (codigosDDD.indexOf(parseInt(ddd)) === -1)
+        return null; //código de DDD inválido
+
+    if (options.apenasDDD != null && options.apenasDDD.indexOf(ddd) === -1)
         return null; //código de DDD inválido
 
     return telefone;

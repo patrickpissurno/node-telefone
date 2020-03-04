@@ -40,6 +40,7 @@ console.log(parse("+55 (21) 97864-2213")); //retorna 21978642213
 console.log(parse("(21) 00000-0000")); //retorna null, pois o telefone é inválido
 console.log(parse("+55 (21) 97864-2213", { apenasFixo: true })); //retorna null, pois o telefone não é fixo
 console.log(parse("+55 (21) 4002-8922", { apenasCelular: true })); //retorna null, pois o telefone não é celular
+console.log(parse("+55 (21) 4002-8922", { apenasDDD: [ '11', '24' ] })); //retorna null, pois o telefone não é de um dos DDDs informados
 ```
 
 ## format(str)

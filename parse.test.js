@@ -13,6 +13,7 @@ tap.equal(parse('2140028922', { apenasCelular: true }), null, 'telefone fixo dev
 tap.equal(parse('21987874747', { apenasFixo: true }), null, 'celular deve retornar null quando apenasFixo é true');
 tap.equal(parse('36987874747'), null, 'telefone deve retornar null quando DDD é inválido');
 tap.equal(parse('2110101010'), null, 'telefone deve retornar null quando as iniciais do fixo são inválidas');
+tap.equal(parse('21987874747', { apenasDDD: [ '11' ] }), null, 'celular deve retornar null não for um dos DDDs do apenasDDD');
 
 tap.equal(parse('(11) 4002-8922'), '1140028922', 'telefone fixo válido deve retornar somente números');
 tap.equal(parse('11990000000'), '11990000000', 'telefone celular válido deve retornar somente números');
