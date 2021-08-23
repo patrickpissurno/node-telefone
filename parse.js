@@ -46,7 +46,7 @@ module.exports = function (value, options = default_options){
         return null; //todos os celulares tem 9 dígitos
 
     if(options.apenasFixo === true && telefone.length === 11)
-        return null; //todos os telefones fixos tem 10 dígitos
+        return null; //todos os telefones fixos tem 8 dígitos
 
     if (telefone.length === 11){
         if(telefone.substring(2, 3) !== '9')
