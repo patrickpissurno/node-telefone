@@ -39,11 +39,11 @@ module.exports = function (value, options = default_options){
             return null; //DDI não brasileiro
     }
 
-    if (telefone.length < 10 || telefone.length > 11)
+    if (telefone.length < 10 || telefone.length > 11) //apenas telefones fixos com DDD ou celulares com DDD
         return null;
 
     if (options.apenasCelular === true && telefone.length === 10)
-        return null; //todos os celulares tem 9 dígitos
+        return null; //todos os celulares tem 11 dígitos
 
     if(options.apenasFixo === true && telefone.length === 11)
         return null; //todos os telefones fixos tem 10 dígitos
