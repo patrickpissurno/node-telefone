@@ -28,7 +28,7 @@ const defaultOptions: Options = {
  * @param {string} value número de telefone
  * @param {Options} options opções de configuração
  */
-export default function parse(value: string, options: Options = defaultOptions): string {
+export function parse(value: string, options: Options = defaultOptions): string {
   if (value == null || typeof value !== 'string') return null
 
   let telefone = value.replace(/\D/g, '')

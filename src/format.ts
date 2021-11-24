@@ -1,9 +1,9 @@
-import parse from './parse'
+import { parse } from './parse'
 
 /**
  * @param {string} value número de telefone
  */
-export default function format(value: string): string {
+export function format(value: string): string {
   value = parse(value)
   if (!value) return value
 

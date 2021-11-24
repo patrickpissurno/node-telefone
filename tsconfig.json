@@ -5,7 +5,7 @@
     "experimentalDecorators": true,
     "allowJs": false,
     "checkJs": false,
-    "outDir": "build",
+    "outDir": "lib",
     "strict": false,
     "noImplicitThis": true,
     "esModuleInterop": true,

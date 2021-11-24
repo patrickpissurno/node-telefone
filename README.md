@@ -20,43 +20,41 @@ npm i telefone
 ## Como importar
 
 ```js
-const parse = require('telefone/parse');
+const { parse } = require('telefone')
 // ou
-const { parse } = require('telefone');
-// ou
-const parse = require('telefone').parse;
+const parse = require('telefone').parse
 
-const format = require('telefone/format');
+const { format } = require('telefone')
 // ou
-const { format } = require('telefone');
-// ou
-const format = require('telefone').format;
+const format = require('telefone').format
 ```
 
 ### Typescript
 
-Agora typescript também está disponível.
+Tipagem typescript também está disponível.
 
-TODO: Adicionar exemplos
+```ts
+import { parse, format } from 'telefone'
+```
 
 ## parse(str)
 
 ```js
-const parse = require('telefone/parse');
-console.log(parse('+55 (21) 97864-2213')); //retorna 21978642213
-console.log(parse('(21) 00000-0000')); //retorna null, pois o telefone é inválido
-console.log(parse('+55 (21) 97864-2213', { apenasFixo: true })); //retorna null, pois o telefone não é fixo
-console.log(parse('+55 (21) 4002-8922', { apenasCelular: true })); //retorna null, pois o telefone não é celular
-console.log(parse('+55 (21) 4002-8922', { apenasDDD: ['11', '24'] })); //retorna null, pois o telefone não é de um dos DDDs informados
+const parse = require('telefone/parse')
+console.log(parse('+55 (21) 97864-2213')) //retorna 21978642213
+console.log(parse('(21) 00000-0000')) //retorna null, pois o telefone é inválido
+console.log(parse('+55 (21) 97864-2213', { apenasFixo: true })) //retorna null, pois o telefone não é fixo
+console.log(parse('+55 (21) 4002-8922', { apenasCelular: true })) //retorna null, pois o telefone não é celular
+console.log(parse('+55 (21) 4002-8922', { apenasDDD: ['11', '24'] })) //retorna null, pois o telefone não é de um dos DDDs informados
 ```
 
 ## format(str)
 
 ```js
-const format = require('telefone/format');
-console.log(format('+55 2197864 2213')); //retorna (21) 97864-2213
-console.log(format('+5521 4002 8922')); //retorna (21) 4002-8922
-console.log(format('2140028922')); //retorna (21) 4002-8922
+const format = require('telefone/format')
+console.log(format('+55 2197864 2213')) //retorna (21) 97864-2213
+console.log(format('+5521 4002 8922')) //retorna (21) 4002-8922
+console.log(format('2140028922')) //retorna (21) 4002-8922
 ```
 
 ## Posso usar em produção?

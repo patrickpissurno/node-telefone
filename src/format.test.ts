@@ -1,5 +1,5 @@
 import tap from 'tap'
-import format from './format'
+import { format } from './format'
 
 tap.equal(format(null), null, 'null deve retornar null')
 tap.equal(format('123'), null, 'telefone inválido deve retornar null')

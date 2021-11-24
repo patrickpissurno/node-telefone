@@ -1,5 +1,5 @@
 import tap from 'tap'
-import parse from './parse'
+import { parse } from './parse'
 
 tap.equal(parse(null), null, 'null deve retornar null')
 tap.equal(parse('123'), null, 'telefone inválido deve retornar null')
