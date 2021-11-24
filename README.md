@@ -1,4 +1,5 @@
 # telefone
+
 [![npm-version](https://img.shields.io/npm/v/telefone.svg)](https://www.npmjs.com/package/telefone)
 [![build status](https://travis-ci.org/patrickpissurno/node-telefone.svg?branch=master)](https://travis-ci.org/patrickpissurno/node-telefone)
 [![coverage status](https://coveralls.io/repos/github/patrickpissurno/node-telefone/badge.svg?branch=master)](https://coveralls.io/github/patrickpissurno/node-telefone?branch=master)
@@ -8,7 +9,7 @@
 
 Biblioteca para validar e formatar facilmente telefones brasileiros
 
-O objetivo desta biblioteca é ser leve e oferecer métodos simples e garantidos para validação e formatação básica de telefones brasileiros. 
+O objetivo desta biblioteca é ser leve e oferecer métodos simples e garantidos para validação e formatação básica de telefones brasileiros.
 
 ## Install
 
@@ -19,40 +20,66 @@ npm i telefone
 ## Como importar
 
 ```js
-const parse = require('telefone/parse');
+const { parse } = require('telefone')
 // ou
-const { parse } = require('telefone');
-// ou
-const parse = require('telefone').parse;
+const parse = require('telefone').parse
 
-const format = require('telefone/format');
+const { format } = require('telefone')
 // ou
-const { format } = require('telefone');
-// ou
-const format = require('telefone').format;
+const format = require('telefone').format
+```
+
+### Typescript
+
+Tipagem typescript também está disponível.
+
+```ts
+import { parse, format } from 'telefone'
 ```
 
 ## parse(str)
 
 ```js
-const parse = require('telefone/parse');
-console.log(parse("+55 (21) 97864-2213")); //retorna 21978642213
-console.log(parse("(21) 00000-0000")); //retorna null, pois o telefone é inválido
-console.log(parse("+55 (21) 97864-2213", { apenasFixo: true })); //retorna null, pois o telefone não é fixo
-console.log(parse("+55 (21) 4002-8922", { apenasCelular: true })); //retorna null, pois o telefone não é celular
-console.log(parse("+55 (21) 4002-8922", { apenasDDD: [ '11', '24' ] })); //retorna null, pois o telefone não é de um dos DDDs informados
+const parse = require('telefone').parse
+console.log(parse('+55 (21) 97864-2213')) //retorna 21978642213
+console.log(parse('(21) 00000-0000')) //retorna null, pois o telefone é inválido
+console.log(parse('+55 (21) 97864-2213', { apenasFixo: true })) //retorna null, pois o telefone não é fixo
+console.log(parse('+55 (21) 4002-8922', { apenasCelular: true })) //retorna null, pois o telefone não é celular
+console.log(parse('+55 (21) 4002-8922', { apenasDDD: ['11', '24'] })) //retorna null, pois o telefone não é de um dos DDDs informados
 ```
 
 ## format(str)
 
 ```js
-const format = require('telefone/format');
-console.log(format("+55 2197864 2213")); //retorna (21) 97864-2213
-console.log(format("+5521 4002 8922")); //retorna (21) 4002-8922
-console.log(format("2140028922")); //retorna (21) 4002-8922
+const format = require('telefone').format
+console.log(format('+55 2197864 2213')) //retorna (21) 97864-2213
+console.log(format('+5521 4002 8922')) //retorna (21) 4002-8922
+console.log(format('2140028922')) //retorna (21) 4002-8922
+```
+
+## formatWhatsapp(str)
+
+O Whatsapp possui peculiaridades na formatação de seus número que podem ser automatizadas
+utilizando essa funcionalidade. Isso pode ser particularmente ruim ao enviar mensagens através
+de bots de whatsapp sem o devido tratamento.
+
+1. Número deve estar no formato internacional, começando com 55
+2. Pode ser número celular ou fixo
+3. Telefones celulares com DDD 11 a 28 tem seu numero com o nono digito
+4. Telefones celulares de outras regiões ainda não receberam o nono digito
+
+```js
+const formatWhatsapp = require('telefone').formatWhatsapp
+console.log(formatWhatsapp('123')) //retorna null
+console.log(formatWhatsapp('65 9205-0000')) //retorna null
+console.log(formatWhatsapp('65 99205-0000')) //retorna 556592050000 (sem o 9 digito)
+console.log(formatWhatsapp('+55 2197864 2213')) //retorna 5521978642213 (com o 9 digito)
+console.log(formatWhatsapp('+5521 4002 8922')) //retorna 552140028922
+console.log(formatWhatsapp('2140028922')) //retorna 552140028922
 ```
 
 ## Posso usar em produção?
+
 Deve. Essa biblioteca tem uma política estrita de 100% de cobertura. O Travis-CI é executado para cada commit, por garantia. Além disso, ela tem sido usada internamente em produção por mais de um ano.
 
 ## Licença
