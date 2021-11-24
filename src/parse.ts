@@ -19,8 +19,6 @@ export interface Options {
 const defaultOptions: Options = {
   apenasFixo: false,
   apenasCelular: false,
-
-  /** @type { string[] } */
   apenasDDD: null,
 }
 
