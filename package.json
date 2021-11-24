@@ -4,7 +4,8 @@
   "description": "Biblioteca para validar facilmente telefones brasileiros",
   "main": "index.js",
   "scripts": {
-    "test": "tap --100"
+    "build": "tsc",
+    "test": "tap --100 --ts"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,10 @@
   },
   "homepage": "https://github.com/patrickpissurno/node-telefone#readme",
   "devDependencies": {
-    "tap": "^15.0.9"
+    "@types/node": "^16.11.10",
+    "@types/tap": "^15.0.5",
+    "tap": "^15.0.9",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
   }
 }

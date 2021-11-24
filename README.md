@@ -1,4 +1,5 @@
 # telefone
+
 [![npm-version](https://img.shields.io/npm/v/telefone.svg)](https://www.npmjs.com/package/telefone)
 [![build status](https://travis-ci.org/patrickpissurno/node-telefone.svg?branch=master)](https://travis-ci.org/patrickpissurno/node-telefone)
 [![coverage status](https://coveralls.io/repos/github/patrickpissurno/node-telefone/badge.svg?branch=master)](https://coveralls.io/github/patrickpissurno/node-telefone?branch=master)
@@ -8,7 +9,7 @@
 
 Biblioteca para validar e formatar facilmente telefones brasileiros
 
-O objetivo desta biblioteca é ser leve e oferecer métodos simples e garantidos para validação e formatação básica de telefones brasileiros. 
+O objetivo desta biblioteca é ser leve e oferecer métodos simples e garantidos para validação e formatação básica de telefones brasileiros.
 
 ## Install
 
@@ -32,27 +33,34 @@ const { format } = require('telefone');
 const format = require('telefone').format;
 ```
 
+### Typescript
+
+Agora typescript também está disponível.
+
+TODO: Adicionar exemplos
+
 ## parse(str)
 
 ```js
 const parse = require('telefone/parse');
-console.log(parse("+55 (21) 97864-2213")); //retorna 21978642213
-console.log(parse("(21) 00000-0000")); //retorna null, pois o telefone é inválido
-console.log(parse("+55 (21) 97864-2213", { apenasFixo: true })); //retorna null, pois o telefone não é fixo
-console.log(parse("+55 (21) 4002-8922", { apenasCelular: true })); //retorna null, pois o telefone não é celular
-console.log(parse("+55 (21) 4002-8922", { apenasDDD: [ '11', '24' ] })); //retorna null, pois o telefone não é de um dos DDDs informados
+console.log(parse('+55 (21) 97864-2213')); //retorna 21978642213
+console.log(parse('(21) 00000-0000')); //retorna null, pois o telefone é inválido
+console.log(parse('+55 (21) 97864-2213', { apenasFixo: true })); //retorna null, pois o telefone não é fixo
+console.log(parse('+55 (21) 4002-8922', { apenasCelular: true })); //retorna null, pois o telefone não é celular
+console.log(parse('+55 (21) 4002-8922', { apenasDDD: ['11', '24'] })); //retorna null, pois o telefone não é de um dos DDDs informados
 ```
 
 ## format(str)
 
 ```js
 const format = require('telefone/format');
-console.log(format("+55 2197864 2213")); //retorna (21) 97864-2213
-console.log(format("+5521 4002 8922")); //retorna (21) 4002-8922
-console.log(format("2140028922")); //retorna (21) 4002-8922
+console.log(format('+55 2197864 2213')); //retorna (21) 97864-2213
+console.log(format('+5521 4002 8922')); //retorna (21) 4002-8922
+console.log(format('2140028922')); //retorna (21) 4002-8922
 ```
 
 ## Posso usar em produção?
+
 Deve. Essa biblioteca tem uma política estrita de 100% de cobertura. O Travis-CI é executado para cada commit, por garantia. Além disso, ela tem sido usada internamente em produção por mais de um ano.
 
 ## Licença
