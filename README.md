@@ -3,7 +3,7 @@
 [![build status](https://travis-ci.org/patrickpissurno/node-telefone.svg?branch=master)](https://travis-ci.org/patrickpissurno/node-telefone)
 [![coverage status](https://coveralls.io/repos/github/patrickpissurno/node-telefone/badge.svg?branch=master)](https://coveralls.io/github/patrickpissurno/node-telefone?branch=master)
 [![known vulnerabilities](https://snyk.io/test/github/patrickpissurno/node-telefone/badge.svg)](https://snyk.io/test/github/patrickpissurno/node-telefone)
-[![downloads](https://img.shields.io/npm/dt/telefone.svg)](http://npm-stats.com/~packages/telefone)
+[![downloads](https://img.shields.io/npm/dt/telefone.svg)](https://www.npmjs.com/package/telefone)
 [![license](https://img.shields.io/github/license/patrickpissurno/node-telefone.svg?maxAge=1800)](https://github.com/patrickpissurno/node-telefone/blob/master/LICENSE)
 
 Biblioteca para validar e formatar facilmente telefones brasileiros
