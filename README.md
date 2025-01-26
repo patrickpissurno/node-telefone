@@ -1,6 +1,5 @@
 # telefone
 [![npm-version](https://img.shields.io/npm/v/telefone.svg)](https://www.npmjs.com/package/telefone)
-[![build status](https://travis-ci.org/patrickpissurno/node-telefone.svg?branch=master)](https://travis-ci.org/patrickpissurno/node-telefone)
 [![coverage status](https://coveralls.io/repos/github/patrickpissurno/node-telefone/badge.svg?branch=master)](https://coveralls.io/github/patrickpissurno/node-telefone?branch=master)
 [![known vulnerabilities](https://snyk.io/test/github/patrickpissurno/node-telefone/badge.svg)](https://snyk.io/test/github/patrickpissurno/node-telefone)
 [![downloads](https://img.shields.io/npm/dt/telefone.svg)](https://www.npmjs.com/package/telefone)
@@ -53,13 +52,13 @@ console.log(format("2140028922")); //retorna (21) 4002-8922
 ```
 
 ## Posso usar em produção?
-Deve. Essa biblioteca tem uma política estrita de 100% de cobertura. O Travis-CI é executado para cada commit, por garantia. Além disso, ela tem sido usada internamente em produção por mais de um ano.
+Deve. Essa biblioteca tem uma política estrita de 100% de cobertura. Além disso, ela tem sido usada internamente em produção desde 2019.
 
 ## Licença
 
 MIT License
 
-Copyright (c) 2019-2023 Patrick Pissurno
+Copyright (c) 2019-2025 Patrick Pissurno
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
